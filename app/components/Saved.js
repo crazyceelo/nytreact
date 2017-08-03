@@ -1,7 +1,5 @@
 var React = require("react");
 
-//Link require maybe
-
 class Saved extends React.Component{
     render(){
         return(
