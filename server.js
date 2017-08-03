@@ -1,11 +1,11 @@
 // server dependencies
-import express from "express";
-import bodyParser from "body-parser";
-import logger from "morgan";
-import mongoose from "mongoose";
+var express = require("express");
+var bodyParser = require("body-parser");
+var logger = require("morgan");
+var mongoose = require("mongoose");
 
 // require models schema
-import Articles from "./models/Articles";
+var Articles = require("./models/Articles");
 
 // create instance of express and set a port
 var app = express();
