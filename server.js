@@ -5,7 +5,7 @@ var logger = require("morgan");
 var mongoose = require("mongoose");
 
 // require models schema
-var Articles = require("./models/Articles");
+var Articles = require("./models/Article");
 
 // create instance of express and set a port
 var app = express();
