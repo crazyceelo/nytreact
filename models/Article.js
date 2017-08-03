@@ -11,7 +11,7 @@ var ArticleSchema = new Schema({
     },
 
     url: {
-        type: HTMLLinkElement
+        type: String
     }
 });
 

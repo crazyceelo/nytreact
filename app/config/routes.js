@@ -1,6 +1,20 @@
-// /api/saved (get) - your components will use this to query MongoDB for all saved articles
-// /api/saved (post) - your components will use this to save an article to the database
-// /api/saved (delete) - your components will use this to delete a saved article in the database
-    
-/* * (get) - will load your single HTML page (with ReactJS) 
-in public/index.html. Make sure you put this after all other GET routes */
+var React = require("react");
+
+var router = require("react-router");
+
+var Router = router.Router; // Include the Route component for displaying individual routes
+var Route = router.Route; // Include the Router component to contain all our Routes
+var hashHistory = router.hashHistory; // Include the hashHistory prop to handle routing client side without a server
+var IndexRoute = router.IndexRoute; // Include the IndexRoute (catch-all route)
+
+var Main = require("../components/Main");
+var Search = require("../components/Search");
+
+module.exports = (
+    <Router history={hashHistory}>
+        <Route path="/" component={Main}>
+
+        </Route>
+        <indexRout component={Search}/>
+    </Router>
+)
