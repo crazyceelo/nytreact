@@ -1,6 +1,6 @@
 var React = require("react");
 
-class Saved extends React.Component{
+export default class Saved extends React.Component{
     render(){
         return(
             <div className="container">
@@ -26,5 +26,3 @@ class Saved extends React.Component{
         )
     }
 }
-
-module.exports = Saved;

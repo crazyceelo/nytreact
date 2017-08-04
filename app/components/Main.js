@@ -1,8 +1,22 @@
 var React = require("react");
+var router = require("react-router");
+import { HashRouter as Router, Route } from 'react-router-dom';
 
+import Search from "./Search";
+import Saved from "./Saved";
 
+export default class Main extends React.Component {
+    constructor(){
+        super()
 
-class Main extends React.Component {
+        this.state={
+            term: "",
+            records: 0,
+            syear: 0,
+            eyear: 0
+        }
+    }
+
     render(){
         return(
             <div className="container">
@@ -13,7 +27,12 @@ class Main extends React.Component {
                         </div>
                     </div>
                 </div>
+                <div className="row">
+                    <Route path="/" render={()=><Search test={this.state.syear} />}/>
+                    <Route path="/saved" component={Saved} />
+                </div>
             </div>
+            
         )
     }
 }

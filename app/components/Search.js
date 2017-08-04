@@ -4,26 +4,18 @@ var Link = require("react-router").Link;
 var Query = require("./children/Query");
 var Results = require("./children/Results");
 
-class Search extends React.Component{
-    constructor(){
-        super()
+export default class Search extends React.Component{
 
-        this.state={
-            term: "",
-            records: 0,
-            syear: 0,
-            eyear: 0
-        }
-    }
+// function to set a state
+// move states to main
 
     render(){
         return(
             <div>
-                <Query />
+                <h1>{this.props.test}</h1>
+                <Query /> 
                 <Results />
             </div>
         )
     }
 }
-
-module.exports = Search;

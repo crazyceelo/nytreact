@@ -8,15 +8,11 @@ var hashHistory = router.hashHistory; // Include the hashHistory prop to handle 
 var IndexRoute = router.IndexRoute; // Include the IndexRoute (catch-all route)
 
 var Main = require("../components/Main");
-var Search = require("../components/Search");
-var Saved = require("../components/Saved");
 
 module.exports = (
     <Router>
         <div>
-            <Route exact path="/" component={Main} />
-            <Route path="/" component={Search} />
-            <Route path="/" component={Saved} />
+            <Route path="/" component={Main} />
         </div>
     </Router>
 );
