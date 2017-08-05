@@ -12,8 +12,20 @@ class Query extends React.Component{
         }
     }
 
-    handleChange(event){
+    handleChangeTerm(event){
         this.setState({ term: event.target.value}); // this grabs the input
+    }
+
+    handleChangeNumber(event){
+        this.setState({number: event.target.value});
+    }
+
+    handleChangeStartingYear(event){
+        this.setState({startingYear: event.target.value});
+    }
+
+    handleChangeEndingYear(event){
+        this.setState({endingYear: event.target.value});
     }
 
     handlSubmitTerm(event){
@@ -74,7 +86,7 @@ class Query extends React.Component{
                                         className="form-control" 
                                         id="term" 
                                         value={this.state.term}
-                                        onChange={this.handleChange}
+                                        onChange={this.handleChangeTerm}
                                         required
                                         />
                                     </div>
@@ -83,7 +95,7 @@ class Query extends React.Component{
                                     <div className="form-group">
                                         <label htmlFor="pwd">Number of Records to Retrieve:</label>
                                         <select className="form-control" id="numRecordsSelect" >
-                                            <option onChange={this.handleChange} value={this.state.number} >0</option>
+                                            <option onChange={this.handleChangeNumber} value={this.state.number} >0</option>
                                             {/* <!-- Setting the option for 5 as default --> */}
                                         </select>			  
                                     </div>
@@ -95,7 +107,7 @@ class Query extends React.Component{
                                         type="text" 
                                         className="form-control" 
                                         id="startYear" 
-                                        onChange={this.handleChange}
+                                        onChange={this.handleChangeStartingYear}
                                         value={this.state.startingYear}
                                         />
                                     </div>
@@ -107,7 +119,7 @@ class Query extends React.Component{
                                         type="text" 
                                         className="form-control" 
                                         id="endYear" 
-                                        onChange={this.handleChange}
+                                        onChange={this.handleChangeEndingYear}
                                         value={this.state.endingYear}
                                         />
                                     </div>
