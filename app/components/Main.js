@@ -10,11 +10,29 @@ export default class Main extends React.Component {
         super()
 
         this.state={
-            term: "",
+            searchTerm: "",
             records: 0,
             syear: 0,
-            eyear: 0
+            eyear: 0,
+            results: "",
+            savedArticles: ""
         }
+    }
+
+    setTerm(term){
+        this.setState({searchTerm: term});
+    }
+
+    setRecords(number){
+        this.setState({ records: number});
+    }
+
+    setStartingYear(staringYear){
+        this.setState({ syear: staringYear});
+    }
+
+    setEndingYear(endingYear){
+        this.setState({ eyear: endingYear});
     }
 
     render(){
@@ -28,7 +46,13 @@ export default class Main extends React.Component {
                     </div>
                 </div>
                 <div className="row">
-                    <Route path="/" render={()=><Search test={this.state.syear} />}/>
+                    <Route path="/" render={()=><Search 
+                    setTerm={this.setTerm}
+                    setRecords={this.setRecords}
+                    setStartingYear={this.setStartingYear}
+                    setEndingYear={this.setEndingYear} 
+                    results={this.state.results}
+                    />}/>
                     <Route path="/saved" component={Saved} />
                 </div>
             </div>

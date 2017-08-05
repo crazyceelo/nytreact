@@ -18,6 +18,7 @@ class Results extends React.Component{
 
                             {/* <!-- This main panel will hold each of the resulting articles --> */}
                             <div className="panel-body" id="wellSection">
+                                <h5>{this.props.results}</h5>
                             </div>
                         </div>
                     </div>
