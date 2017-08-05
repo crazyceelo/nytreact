@@ -11,10 +11,10 @@ var helper = {
         // console.log(`syear: ${syear}`);
         // console.log(`eyear: ${eyear}`);
 
-        var queryURL = `https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=${authKey}&q=${term}&begin_date=${syear}0101&end_date=${eyear}1231&page=${records}`;
+        var queryURL = `https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=${authKey}&q=${term}&begin_date=${syear}0101&end_date=${eyear}1230&page=${records}`;
         return Axios.get(queryURL).then(function(response){
             console.log(response);
-        })
+        }.bind(this));
     },
 
     getHistory: function(){
