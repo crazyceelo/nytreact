@@ -19,6 +19,15 @@ export default class Main extends React.Component {
         }
     }
 
+    componentDidUpdate(){
+        helpers.runQuery(this.state.searchTerm, this.state.records, this.state.syear, this.state.eyear)
+        .then((data)=>{
+            if (data !== this.state.results){
+                this.setState({results: data});
+            }
+        })
+    }
+
     setTerm(term){
         this.setState({searchTerm: term});
     }
@@ -28,7 +37,7 @@ export default class Main extends React.Component {
     }
 
     setStartingYear(staringYear){
-        this.setState({ syear: staringYear});
+        this.setState({ syear: startingYear});
     }
 
     setEndingYear(endingYear){
