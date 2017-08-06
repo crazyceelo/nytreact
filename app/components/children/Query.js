@@ -14,7 +14,6 @@ class Query extends React.Component{
                                 <h3 className="panel-title"><strong><i className="fa  fa-list-alt"></i>Search Parameters</strong></h3>
                             </div>
                             <div className="panel-body">
-
                                 {/* <!-- Here we create an HTML Form for handling the inputs--> */}
                                 <form role="form" >
 
@@ -24,7 +23,8 @@ class Query extends React.Component{
                                         <input 
                                         type="text" 
                                         className="form-control" 
-                                        id="term" 
+                                        id="term"
+                                        value={this.props.data.searchTerm}
                                         required
                                         />
                                     </div>

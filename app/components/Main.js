@@ -10,10 +10,10 @@ export default class Main extends React.Component {
         super(props)
 
         this.state={
-            searchTerm: "",
+            searchTerm: "term test",
             records: 0,
-            syear: "",
-            eyear: "",
+            syear: "syear test",
+            eyear: "eyear test",
             results: "",
             savedArticles: ""
         }
@@ -58,7 +58,7 @@ export default class Main extends React.Component {
                     </div>
                 </div>
                 <div className="row">
-                    <Route path="/" render={()=><Search />}/>
+                    <Route path="/" render={()=><Search data={this.state}/>}/>
                     <Route path="/saved" component={Saved} />
                 </div>
             </div>    
