@@ -6,43 +6,46 @@ import Search from "./Search";
 import Saved from "./Saved";
 
 export default class Main extends React.Component {
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
 
         this.state={
             searchTerm: "",
             records: 0,
-            syear: 0,
-            eyear: 0,
+            syear: "",
+            eyear: "",
             results: "",
             savedArticles: ""
         }
     }
 
-    componentDidUpdate(){
-        helpers.runQuery(this.state.searchTerm, this.state.records, this.state.syear, this.state.eyear)
-        .then((data)=>{
-            if (data !== this.state.results){
-                this.setState({results: data});
-            }
-        })
-    }
+    // componentDidUpdate(){
+    //     helpers.runQuery(this.state.searchTerm, this.state.records, this.state.syear, this.state.eyear)
+    //     .then((data)=>{
+    //         if (data !== this.state.results){
+    //             this.setState({results: data});
+    //         }
+    //     })
+    // }
 
-    setTerm(term){
-        this.setState({searchTerm: term});
-    }
+    // handleChange(event){
+    //     this.setState({ 
+    //         [event.target.id]: event.target.value
+    //     });
+    // }
 
-    setRecords(number){
-        this.setState({ records: number});
-    }
+    // handleSubmit(event){
+    //     event.preventDefault();
 
-    setStartingYear(staringYear){
-        this.setState({ syear: startingYear});
-    }
+    //     this.props.setTerm(this.state.term);
+    //     this.props.setRecords(this.state.number);
+    //     this.props.setStartingYear(this.state.startingYear);
+    //     this.props.setEndingYear(this.state.endingYear);
+    // }
 
-    setEndingYear(endingYear){
-        this.setState({ eyear: endingYear});
-    }
+    // setTerm(term){
+    //     this.setState({searchTerm: term});
+    // }
 
     render(){
         return(
@@ -55,17 +58,10 @@ export default class Main extends React.Component {
                     </div>
                 </div>
                 <div className="row">
-                    <Route path="/" render={()=><Search 
-                    setTerm={this.setTerm}
-                    setRecords={this.setRecords}
-                    setStartingYear={this.setStartingYear}
-                    setEndingYear={this.setEndingYear} 
-                    results={this.state.results}
-                    />}/>
+                    <Route path="/" render={()=><Search />}/>
                     <Route path="/saved" component={Saved} />
                 </div>
-            </div>
-            
+            </div>    
         )
     }
 }

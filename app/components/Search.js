@@ -12,13 +12,8 @@ export default class Search extends React.Component{
     render(){
         return(
             <div>
-                <Query 
-                    setTerm={this.props.setTerm}
-                    setRecords={this.props.setRecords}
-                    setStartingYear={this.props.setStartingYear}
-                    setEndingYear={this.props.setEndingYear}
-                /> 
-                <Results results={this.props.results} />
+                <Query /> 
+                <Results />
             </div>
         )
     }

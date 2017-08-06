@@ -1,61 +1,6 @@
 var React = require("react");
 
-class Query extends React.Component{
-    constructor(){
-        super()
-
-        this.state={
-            term: "",
-            number: 0,
-            startingYear: "",
-            endingYear: ""
-        }
-    }
-
-    handleChangeTerm(event){
-        this.setState({ term: event.target.value}); // this grabs the input
-    }
-
-    handleChangeNumber(event){
-        this.setState({number: event.target.value});
-    }
-
-    handleChangeStartingYear(event){
-        this.setState({startingYear: event.target.value});
-    }
-
-    handleChangeEndingYear(event){
-        this.setState({endingYear: event.target.value});
-    }
-
-    handlSubmitTerm(event){
-        event.preventDefault();
-
-        this.props.setTerm(this.state.term);
-        this.setState({ term: ""});
-    }
-
-    handleSubmitNumber(event){
-        event.preventDefault();
-
-        this.props.setRecords(this.state.number);
-        this.setState({number: 0});
-    }
-
-    handleSubmitStartingYear(event){
-        event.preventDefault();
-
-        this.props.setStartingYear(this.state.startingYear);
-        this.setState({startingYear: ""});
-    }
-
-    handleSubmitEndingYear(event){
-        event.preventDefault();
-
-        this.props.setEndingYear(this.state.endingYear);
-        this.setState({endingYear: ""});
-    }
-
+class Query extends React.Component{ 
     render(){
         return(
             <div className="container">
@@ -71,12 +16,7 @@ class Query extends React.Component{
                             <div className="panel-body">
 
                                 {/* <!-- Here we create an HTML Form for handling the inputs--> */}
-                                <form role="form" 
-                                onSubmit={this.handlSubmitTerm} 
-                                onSubmit={this.handleSubmitNumber}
-                                onSubmit={this.handleSubmitStartingYear}
-                                onSubmit={this.handleSubmitEndingYear}
-                                >
+                                <form role="form" >
 
                                     {/* <!-- Here we create the text box for capturing the search term--> */}
                                     <div className="form-group">
@@ -85,8 +25,6 @@ class Query extends React.Component{
                                         type="text" 
                                         className="form-control" 
                                         id="term" 
-                                        value={this.state.term}
-                                        onChange={this.handleChangeTerm.bind(this)}
                                         required
                                         />
                                     </div>
@@ -95,7 +33,7 @@ class Query extends React.Component{
                                     <div className="form-group">
                                         <label htmlFor="pwd">Number of Records to Retrieve:</label>
                                         <select className="form-control" id="numRecordsSelect" >
-                                            <option onChange={this.handleChangeNumber.bind(this)} value={this.state.number} >0</option>
+                                            <option >0</option>
                                             {/* <!-- Setting the option for 5 as default --> */}
                                         </select>			  
                                     </div>
@@ -106,9 +44,7 @@ class Query extends React.Component{
                                         <input 
                                         type="text" 
                                         className="form-control" 
-                                        id="startYear" 
-                                        onChange={this.handleChangeStartingYear.bind(this)}
-                                        value={this.state.startingYear}
+                                        id="startingYear" 
                                         />
                                     </div>
 
@@ -118,9 +54,7 @@ class Query extends React.Component{
                                         <input 
                                         type="text" 
                                         className="form-control" 
-                                        id="endYear" 
-                                        onChange={this.handleChangeEndingYear.bind(this)}
-                                        value={this.state.endingYear}
+                                        id="endingYear" 
                                         />
                                     </div>
 
